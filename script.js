@@ -10,6 +10,7 @@ document.getElementById("button").addEventListener("click",
     // compter le nombre de mots
     arrayText = textarea.value.split(" ")
     nbMots = arrayText.length;
+    // afficher le résultat
     document.getElementById("result").textContent = "Il y a " + nbMots + " mots dans le texte ci-dessus.";
 
     // capter le mot saisi dans le formulaire
@@ -18,17 +19,17 @@ document.getElementById("button").addEventListener("click",
     // compter le nombre de fois que le mot saisi dans le formulaire est présent dans le texte
       // réinitialiser le nombre de mot avant chaque recherche
       nombre = "";
-
+    // allo Houston, je commence à compter
     for (var i = 0 ; i < arrayText.length ; i++) {
       var motLowerCase = arrayText[i].toLowerCase();
       if (motLowerCase.match(mot)) {
         nombre++;
       }
+      // afficher le résultat
       if (nombre != 0) {
         document.getElementById("result_search").textContent = 'Le mot "' + mot + '" est présent ' + nombre + ' fois dans le texte ci-dessus.';
       } else {
         document.getElementById("result_search").textContent = 'Le mot "' + mot + '" n\'a pas été trouvé dans le texte ci-dessus.';
-
       }
     }
   }
